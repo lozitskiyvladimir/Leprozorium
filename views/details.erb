@@ -8,3 +8,10 @@
 		<br/>
 		
 </p>
+<p4>Comments:</p4>
+<br/>
+<form action='/details/<%=@row['id']%>' method='POST'>
+  <textarea  name="content" class="form-control" rows="6" placeholder="Enter comment text"></textarea>
+	<br/>  
+  <button type="submit" class="btn btn-primary">Add comment</button>
+</form>
