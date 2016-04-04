@@ -25,8 +25,9 @@ end
 before do
 	init_db
 end
-get '/' do
-	erb "Hello! <a href=\"https://github.com/bootstrap-ruby/sinatra-bootstrap\">Original</a> pattern has been modified for <a href=\"http://rubyschool.us/\">Ruby School</a>"			
+get '/' do 
+	@results = @db.execute 'select*from Posts order by id desc';
+	erb :index		
 end
 
 
@@ -44,6 +45,11 @@ post "/new" do
 
 	erb " #{content}"
 end
+
+# get '/posts' do
+# 	@result = @db.execute 'select*from Posts';
+#   erb :posts
+# end
 
 
 
