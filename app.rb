@@ -48,10 +48,11 @@ post "/new" do
 	erb " #{content}"
 end
 
-# get '/posts' do
-# 	@result = @db.execute 'select*from Posts';
-#   erb :posts
-# end
+get '/details/:post_id' do
+	post_id = params['post_id']
+	erb "Displayng information for post with id: #{post_id}"
+end
+
 
 
 
