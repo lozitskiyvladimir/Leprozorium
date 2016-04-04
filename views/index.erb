@@ -1,16 +1,13 @@
-<h2>Latest posts </h2>
-
-<table class="table">
-	<head>
-		<th>Created Date</th>
-		<th>Post</th>
-	</head>
-    <body>
-    	<% @results.each do |row|%>
-  		<tr>
-  			<td><%=row['created_date']%></td>
-  			<td><%=row['content']%></td>
-  		</tr>
-  		<% end %>
-    </body>
-</table>
+<h2>Latest posts: </h2>
+	<br/>
+<% @results.each do |post|%>
+	<p>
+	<%=post['content']%>
+	<br/>
+	<br/>
+		<h6>Added at <%= post['created_date']%></h6>
+		<br/>
+		<a href="/post/<%= post['id']%>">Comments</a>
+	</p>
+	<hr/>
+<% end %>
